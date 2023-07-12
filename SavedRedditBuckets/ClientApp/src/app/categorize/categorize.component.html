@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+  <p *ngIf="!savedItems"><em>Loading...</em></p>
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="savedItems">
+    <thead>
+      <tr>
+        <th>kind</th>
+        <th>sub</th>
+        <th>permalink</th>
+        <th>created date</th>
+        <th>title</th>
+        <th>body</th>
+        <th>title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let savedItem of savedItems">
+        <td>{{ savedItem.kind }}</td>
+        <td>{{ savedItem.data.subreddit }}</td>
+        <td>{{ savedItem.data.permaLink }}</td>
+        <td>{{ savedItem.data.created_utc }}</td>
+        <td>{{ savedItem.data.title }}</td>
+        <td>{{ savedItem.data.body }}</td>
+        <td>{{ savedItem.data.link_Title }}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
